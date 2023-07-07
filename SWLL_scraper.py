@@ -31,18 +31,6 @@ def get_page_with_retry(driver, url):
     # If all retries fail, raise an exception
     raise Exception(f"Failed to load page after {max_retries} retries.")
 
-# Check if already are images in the saving folder, shows them and ask to delete.
-existing_imgs = os.listdir(SAVE_FOLDER)
-if len(existing_imgs) > 0:
-    print('The following images already exist.\n')
-    for x in existing_imgs:
-        print("---> " + x)
-    inp = input('Do you want to remove them? [y/n]: ')
-    if inp == 'y':
-        for x in existing_imgs:
-            os.remove(os.path.join(SAVE_FOLDER, x))
-        print('Old images removed.\n')
-
 
 print("Starting Selenium driver...")
 # Set Chrome options
