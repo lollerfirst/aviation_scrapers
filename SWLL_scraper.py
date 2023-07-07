@@ -11,7 +11,7 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
 MAIN_PATH = "https://www.meteoam.it/it/swll"  # Path of the page to parse.
-SAVE_FOLDER = "/home/lollerfirst/tmpimgs/"  # Folder used to save imgs.
+SAVE_FOLDER = './'  # Folder used to save imgs.
 DELAY = 5  # Seconds to wait after header creation and between subsequent trials.
 MAX_RETRIES = 10
 
@@ -62,7 +62,7 @@ imgs = driver.find_elements(By.CSS_SELECTOR, 'img.slider-image, img.slider-side-
 names = [img.get_attribute('src') for img in imgs]  # Used to store the path of images on the page.
 
     
-print(names)
+#print(names)
 
 opener = URLopener()
 
@@ -81,9 +81,6 @@ for x in names:
     img.close()
 
 print('Images saved correctly in ' + SAVE_FOLDER)
-new_imgs = os.listdir(SAVE_FOLDER)
-for img in new_imgs:
-    print("---> " + img)
 
 
 driver.quit()

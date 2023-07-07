@@ -9,7 +9,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import json
 
 URL = "https://www.notams.faa.gov/dinsQueryWeb"  # Path of the page to parse.
-SAVE_PATH = '/home/lollerfirst/tmp/notams-report.json'
+SAVE_PATH = 'notams-report.json'
 
 args = sys.argv[1:]
 
