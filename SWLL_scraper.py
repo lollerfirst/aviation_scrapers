@@ -1,5 +1,3 @@
-#NOTA DI TOM: pip install selenium webdriver-manager
-
 import os
 from io import BytesIO
 from time import sleep
