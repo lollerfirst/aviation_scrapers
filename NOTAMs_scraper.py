@@ -9,8 +9,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import json
 
 URL = "https://www.notams.faa.gov/dinsQueryWeb"  # Path of the page to parse.
-SAVE_FOLDER = '/home/lollerfirst/tmp/'  # Folder used to save imgs.
-SAVE_NAME = 'notams-report.json'
+SAVE_PATH = '/home/lollerfirst/tmp/notams-report.json'
 
 args = sys.argv[1:]
 
@@ -85,8 +84,8 @@ for i in range(0, len(args), 1):
 		tickers[args[i]].append(notam)
 
 
-print("Saving information to {}".format(SAVE_FOLDER+SAVE_NAME))
-f = open(SAVE_FOLDER+SAVE_NAME, "w")
+print("Saving information to {}".format(SAVE_PATH))
+f = open(SAVE_PATH, "w")
 f.write(json.dumps(tickers, indent=4))
 f.close()
 print("Bye!")
